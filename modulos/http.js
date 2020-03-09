@@ -6,7 +6,8 @@ const router = (req, res) => {
 
   switch (req.url) {
     case '/hola':
-      res.write('Hola, que tal');
+      let saludo = hola();
+      res.write(saludo);
       res.end();
       break;
 
@@ -21,6 +22,10 @@ const router = (req, res) => {
 
   // res.end();
 };
+
+function hola() {
+  return 'hola que tal';
+}
 
 http.createServer(router).listen(4000);
 
